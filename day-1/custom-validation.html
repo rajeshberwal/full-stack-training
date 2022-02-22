@@ -19,27 +19,62 @@
     </style>
 
     <script>
-        var uname;
-        var uage;
         // function to create custom inputs
         function init() {
+            // Custom Validation Messages for User Name input
+            let uname = document.getElementById("uname");
+            uname.setCustomValidity("Please enter your name");
+            uname.addEventListener("input", () => {
+                if (uname.value == '') {
+                    uname.setCustomValidity("Please enter your name");
+                } else {
+                    uname.setCustomValidity("");
+                }
+            });
+
             // Custom Validation for User Age
-            uage = document.getElementById("uage");
-            uage.setCustomValidity("Tell us how old you are");
+            let uage = document.getElementById("uage");
+            uage.setCustomValidity("Enter Your Age");
             uage.addEventListener("input", () => {
                 if (uage.value == '') {
-                    uage.setCustomValidity("We need your age to validate");
+                    uage.setCustomValidity("Age Required");
                 } else if (uage.value < 18) {
-                    uage.setCustomValidity("You are too old to join us");
+                    uage.setCustomValidity("You Are Too Young To Join This Site");
                 } else if (uage.value > 90) {
-                    uage.setCustomValidity("You are too old to join us");
+                    uage.setCustomValidity("You Are Too Old To Join This Site");
                 } else {
                     uage.setCustomValidity("");
                 }
             });
+            
+            // Custom Validation for User Email
+            let uemail = document.getElementById("uemail");
+            uemail.setCustomValidity("Enter Your Email");
+            uemail.addEventListener("input", () => {
+                if (uemail.value == '') {
+                    uemail.setCustomValidity("Email Required");
+                } else if (uemail.value.indexOf("@") == -1) {
+                    uemail.setCustomValidity("Invalid Email");
+                } else {
+                    uemail.setCustomValidity("");
+                }
+            });
+
+            // Custom Validation for User Phone Number
+            let uphone = document.getElementById("uphone");
+            uphone.setCustomValidity("Enter Your Phone Number");
+            uphone.addEventListener("input", () => {
+                if (uphone.value == '') {
+                    uphone.setCustomValidity("Phone Number Required");
+                } else if (uphone.value.length < 10) {
+                    uphone.setCustomValidity("Invalid Phone Number");
+                } else {
+                    uphone.setCustomValidity("");
+                }
+            });
         }
 
-        onload = init
+        window.onload = init
     </script>
 
     <title>Validation</title>
@@ -56,8 +91,8 @@
             <input type="number" name="userage" id="uage" required />
         </div>
         <div>
-            <label for="umail">Email</label>
-            <input pattern=".*@.*" type="email" name="useremail" id="umail" required />
+            <label for="uemail">Email</label>
+            <input pattern=".*@.*" type="email" name="useremail" id="uemail" required />
         </div>
         <div>
             <label for="uphone">Phone</label>
