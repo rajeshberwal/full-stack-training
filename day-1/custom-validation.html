@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        label {
+            display: inline-block;
+            width: 80px;
+            margin: 10px;
+        }
+
+        button {
+            margin-left: 100px;
+        }
+    </style>
+
+    <script>
+        var uname;
+        var uage;
+        // function to create custom inputs
+        function init() {
+            // Custom Validation for User Age
+            uage = document.getElementById("uage");
+            uage.setCustomValidity("Tell us how old you are");
+            uage.addEventListener("input", () => {
+                if (uage.value == '') {
+                    uage.setCustomValidity("We need your age to validate");
+                } else if (uage.value < 18) {
+                    uage.setCustomValidity("You are too old to join us");
+                } else if (uage.value > 90) {
+                    uage.setCustomValidity("You are too old to join us");
+                } else {
+                    uage.setCustomValidity("");
+                }
+            });
+        }
+
+        onload = init
+    </script>
+
+    <title>Validation</title>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <div>
+            <label for="uname">User Name</label>
+            <input name="username" id="uname" required />
+        </div>
+        <div>
+            <label for="uage">Age</label>
+            <input type="number" name="userage" id="uage" required />
+        </div>
+        <div>
+            <label for="umail">Email</label>
+            <input pattern=".*@.*" type="email" name="useremail" id="umail" required />
+        </div>
+        <div>
+            <label for="uphone">Phone</label>
+            <input title="***-****-***" pattern="\d{3}-\d{4}-\d{3}" type="tel" name="userphone" id="uphone" required />
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
