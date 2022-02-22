@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Adding NTC.JS -->
+    <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
     <script>
         function getInputData(source, target) {
             document.getElementById(target).textContent = source.value;
@@ -13,6 +15,14 @@
         // function to change color or all output text
         function showColoredText(source, target) {
             // document.getElementById(target).style.color = source.value;
+            var n_match = ntc.name(source.value);
+            n_rgb = n_match[0]; // RGB value of closest match
+            n_name = n_match[1]; // Text string: Color name
+
+            // Overwriting the name of color to output
+            document.getElementById(target).textContent = n_name;
+
+            // Overwriting the color of output to output
             document.querySelectorAll("output").forEach(element => {
                 element.style.color = source.value;
             });
