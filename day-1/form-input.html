@@ -10,8 +10,12 @@
             document.getElementById(target).textContent = source.value;
         }
 
+        // function to change color or all output text
         function showColoredText(source, target) {
-            document.getElementById(target).style.color = source.value;
+            // document.getElementById(target).style.color = source.value;
+            document.querySelectorAll("output").forEach(element => {
+                element.style.color = source.value;
+            });
         }
     </script>
 
