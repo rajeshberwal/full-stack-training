@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Assignment</title>
+
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        var can, ctx;
+        addEventListener("load", init);
+
+        function init() {
+            can = document.getElementsByTagName("canvas")[0];
+            can.width = 500;
+            can.height = 500;
+            ctx = can.getContext("2d");
+
+            ctx.moveTo(250, 200);
+            ctx.lineTo(200, 250);
+            ctx.lineTo(300, 250);
+            ctx.closePath();
+
+
+            ctx.stroke()
+        }
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>

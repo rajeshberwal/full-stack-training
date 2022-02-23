@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage API Assignment</title>
+
+    <script>
+        function saveData() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            var data = {
+                name: name,
+                email: email,
+            };
+
+            // var obj = localStorage.getItem("data");
+
+            localStorage.setItem("data", JSON.stringify(data));
+        }
+
+        function getData() {
+            if (localStorage.getItem("data")) {
+                var data = JSON.parse(localStorage.getItem("data"));
+                console.log(data);
+            } else {
+                console.log("No data found");
+            }
+        }
+
+        function clearData() {
+            localStorage.clear();
+        }
+
+        function removeData() {
+            localStorage.removeItem("data");
+        }
+
+        function dataLength() {
+            console.log(localStorage.length);
+        }
+
+        function dataKeys() {
+            console.log(localStorage.key(0));
+        }
+
+        function init() {
+            if(!localStorage.getItem('data')) {
+                localStorage.setItem('data', '');
+            }
+
+            document
+                .getElementsByTagName('button')[0]
+                .addEventListener('click', saveData);
+
+            document
+                .getElementsByTagName("button")[1]
+                .addEventListener("click", getData);
+            
+            document
+                .getElementsByTagName("button")[2]
+                .addEventListener("click", dataLength);
+            
+            document
+                .getElementsByTagName("button")[3]
+                .addEventListener("click", dataKeys);
+            
+            document
+                .getElementsByTagName("button")[3]
+                .addEventListener("click", clearData);
+            
+            document
+                .getElementsByTagName("button")[3]
+                .addEventListener("click", removeData);
+        }
+        
+        window.onload = init
+    </script>
+</head>
+<body>
+    <label for="name">User Name: </label>
+    <input type="text" id="name">
+    <label for="email">User Email: </label>
+    <input type="text" id="email">
+    <button>Store User</button>
+
+    <hr/>
+    
+    <button>Get Data</button>
+
+    <hr/>
+    
+    <button>Get Data Length</button>
+
+    <hr/>
+    
+    <button>Get Keys</button>
+    
+    <hr/>
+    
+    <button>Clear Data</button>
+
+    <hr/>
+
+    <button>Remove Data</button>
+</body>
+</html>
