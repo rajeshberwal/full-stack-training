@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas API Star</title>
+    <style>
+        canvas {
+            border: 1px solid darkslategray;
+        }
+    </style>
+    <script>
+        var can, ctx;
+        addEventListener("load", init);
+
+        function init() {
+            can = document.getElementsByTagName("canvas")[0];
+            can.width = 500;
+            can.height = 500;
+            ctx = can.getContext("2d");
+
+            ctx.moveTo(100, 0);
+            ctx.lineTo(150, 75);
+            ctx.lineTo(200, 100);
+            ctx.lineTo(150, 125);
+            ctx.lineTo(175, 200);
+            ctx.lineTo(100, 150);
+            ctx.lineTo(50, 200);
+            ctx.lineTo(50, 125);
+            ctx.lineTo(0, 75);
+            ctx.lineTo(75, 50);
+            ctx.lineTo(100, 0);
+            ctx.closePath();
+
+            ctx.stroke()
+        };
+    </script>
+</head>
+
+<body>
+    <canvas></canvas>
+</body>
+
+</html>
