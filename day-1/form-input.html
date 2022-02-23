@@ -14,18 +14,18 @@
 
         // function to change color or all output text
         function showColoredText(source, target) {
-            // document.getElementById(target).style.color = source.value;
             var n_match = ntc.name(source.value);
             n_rgb = n_match[0]; // RGB value of closest match
             n_name = n_match[1]; // Text string: Color name
 
             // Overwriting the name of color to output
             document.getElementById(target).textContent = n_name;
-
+ 
             // Overwriting the color of output to output
-            document.querySelectorAll("output").forEach(element => {
-                element.style.color = source.value;
-            });
+            document.getElementById(target).style.color = source.value;
+            // document.querySelectorAll("output").forEach(element => {
+            //     element.style.color = source.value;
+            // });
         }
     </script>
 
