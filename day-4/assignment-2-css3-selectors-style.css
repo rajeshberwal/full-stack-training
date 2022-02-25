@@ -1,0 +1,162 @@
+section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+ /* Section 1 */
+.section-1 article:first-child {
+    background-color: #1b3bcc;
+    color: rgb(255, 255, 255);
+}
+
+.section-1 article:last-child {
+    background-color: #ece913;
+    color: rgb(31, 14, 14);
+}
+
+.section-1 article:nth-child(3) {
+    background-color: #23b3f5;
+    color: rgb(31, 14, 14);
+}
+
+/* Section 2 */
+.section-2 article:nth-child(odd) {
+    background-color: #33e669;
+    color: rgb(146, 14, 14);
+}
+
+.section-2 article:nth-child(even) {
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+/* Section 3 */
+.section-3 {
+    margin: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.section-3 article:nth-child(3n) {
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+.section-3 article:nth-child(2n) {
+    background-color: #000000;
+    color: rgb(36, 202, 105);
+}
+
+/* Section - 4 */
+.section-4 article:nth-child(1n+3) {
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+/* Section - 5 */
+.section-5 article:nth-child(2n-3) {
+    background-color: #004cf0;
+    color: rgb(199, 190, 190);
+}
+
+.section-5 article:nth-last-child(3) {
+    background-color: #d80c0c;
+    color: rgb(114, 236, 84);
+}
+
+.section-5 p:nth-last-of-type(1) {
+    color: rgb(255, 255, 255);
+    background-color: rgb(86, 88, 218);
+}
+
+.section-5 p:nth-last-of-type(2) {
+    color:rgb(86, 88, 218);
+    background-color:rgb(255, 255, 255);
+}
+
+/* Section - 6 */
+
+.section-6 p:first-of-type {
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+.section-6 p:last-of-type {
+    background-color: #004cf0;
+    color: rgb(199, 190, 190);
+}
+
+/* Section - 7 */
+.section-7 p:only-child {
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+/* Section - 8 */
+.section-8 p:only-of-type {
+    background-color: #004cf0;
+    color: rgb(199, 190, 190);
+}
+
+/* Section - 9 */
+.section-9 input:checked + label {
+    color: rgb(228, 72, 72);
+    font-size: 50px;
+
+}
+
+/* Section - 10 */
+.section-10 input:enabled {
+    color: #ffffff;
+    background-color: #084737;
+}
+
+.section-10 input:disabled {
+    color: #f18d52;
+    background-color: #004cf0;
+}
+
+/* Section - 11 */
+.section-11 #invert::selection {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.section-11 #gold::selection {
+    color: #f18d52;
+    background-color: #000000;
+}
+
+/* :root selector */
+:root {
+    background: #084737;
+}
+
+/* :empty in section-12 */
+.section-12 p:empty {
+    width: 100px;
+    height: 100px;
+    background-color: #f18d52;
+    color: rgb(3, 1, 104);
+}
+
+/* :not() in section-13 */
+.section-13 article:not(p) {
+    color: #f18d52;
+    background-color: #000000;
+}
+
+.section-13 p:not(article) {
+    color: #ffffff;
+    background-color: #ec5c5c;
+}
+
+
+/* > direct in section-14 */
+.section-14 > p {
+    color: #f18d52;
+    background-color: #000000;
+}
