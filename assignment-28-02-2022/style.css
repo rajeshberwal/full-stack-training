@@ -1,0 +1,8 @@
+#can {
+    background-color: #1c3746;
+    border: 5px solid rgb(64, 106, 223);
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
