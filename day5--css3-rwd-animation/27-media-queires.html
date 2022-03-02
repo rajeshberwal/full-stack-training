@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style media="print">
+        article {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+    <style>
+        article {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(220, 72, 72);
+            text-align: center;
+            line-height: 100px;
+            font-size: 36;
+            font-weight: bold;
+            font-family: 'Trebuchet MS';
+            float: left;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        addEventListener("load", function () {
+            setInterval(function () {
+                document.getElementById("log").innerHTML = innerWidth + " px";
+            }, 100)
+
+        })
+    </script>
+</head>
+
+<body>
+    <h1 id="log"></h1>
+    <hr>
+    <section>
+        <article>1</article>
+        <article>2</article>
+        <article>3</article>
+        <article>4</article>
+        <article>5</article>
+        <article>6</article>
+        <article>7</article>
+        <article>8</article>
+        <article>9</article>
+        <article>10</article>
+    </section>
+
+</body>
+
+</html>
