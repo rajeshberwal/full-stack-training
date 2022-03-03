@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/modernizer.js"></script>
+    <!-- <script>
+        if(Modernizr.borderradius){
+            alert("Modernizr found borderradius");
+        }else{
+            alert("Modernizr could not find borderradius");
+        }
+    </script> -->
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            border-radius: 20px;
+        }
+
+        .no-borderradius .box {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            margin: 100px auto;
+            background-image: url("images/reddy.png");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
