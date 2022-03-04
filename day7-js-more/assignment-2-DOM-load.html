@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load In DOM</title>
+
+    <script>
+        function fun1() {
+            var myDiv = document.createElement("div");
+            myDiv.innerHTML = "Body Loaded";
+            document.body.appendChild(myDiv);
+        }
+
+        function fun2() {
+            var myDiv = document.createElement("div");
+            myDiv.innerHTML = "Window Loaded";
+            document.body.appendChild(myDiv);
+        }
+
+        function fun3() {
+            var myDiv = document.createElement("div");
+            myDiv.innerHTML = "DOM Loaded";
+            document.body.appendChild(myDiv);
+        }
+
+        window.addEventListener("load", fun2);
+
+        document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+</head>
+
+<body onload="fun1()">
+
+</body>
+
+</html>
