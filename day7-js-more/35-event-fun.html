@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+        .container {
+            width: 800px;
+            height: 400px;
+            background-color: rgb(28, 29, 29);
+            padding: 5px;
+            margin: 50px auto;
+            border: 1px solid transparent;
+            overflow: auto;
+        }
+
+        .container div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 5px;
+            float: left;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementsByTagName('button')[0].addEventListener('click', addBoxHandler);
+            document.getElementsByTagName('button')[1].addEventListener('click', stopAddingBoxHandler);
+        });
+
+        function addBoxHandler() {
+            var element = document.createElement('div');
+            document.getElementsByClassName('container')[0].appendChild(element);
+            console.log('Box Added');
+        }
+
+        function stopAddingBoxHandler() {
+            document.getElementsByTagName('button')[0].removeEventListener('click', addBoxHandler);
+            document.getElementsByTagName('button')[1].removeEventListener('click', stopAddingBoxHandler);
+            console.log('Stopped Adding Box');
+        }
+    </script>
+</head>
+
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding Box</button>
+    <hr />
+    <div class="container"></div>
+</body>
+
+</html>

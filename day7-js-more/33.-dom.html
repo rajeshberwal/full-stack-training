@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+
+    <script>
+        addEventListener('load', () => {
+            // alert(document.body.childNodes.length);
+            // alert(document.body.children.length);
+            // document.getElementsByTagName('p')[1].innerText = 'Selected';
+            // document.body.children[3].children[0].innerText = 'Selected';
+            console.log(document.body.children[3].children[0].childNodes[0].nodeValue);
+            console.log(document.body.children[3].children[0].textContent);
+            console.log(document.body.children[3].children[0].innerText);
+            console.log(document.body.children[3].children[0].innerHTML);
+        })
+    </script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cupiditate iusto voluptatum pariatur ratione
+        debitis sapiente praesentium, doloremque cumque dolores nemo suscipit iure quis qui, veniam, sed ducimus
+        doloribus dignissimos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe molestiae veritatis voluptate et doloremque
+        voluptatibus mollitia doloribus voluptatem quos sunt. Enim, asperiores ullam aperiam blanditiis aut nisi
+        incidunt nam fugit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui incidunt doloribus iure quos soluta nisi velit,
+        provident, ut maxime, magni voluptates corrupti autem harum fugit. Tempora excepturi maiores vero eligendi?</p>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+</body>
+
+</html>
