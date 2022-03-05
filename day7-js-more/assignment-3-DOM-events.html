@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties Of DOM</title>
+
+    <script>
+        onload = init;
+
+        function init() {
+            getTitle();
+            getForm();
+            getScripts();
+            getCookies();
+            getDomain();
+            getLinks();
+            getImages();
+            getBodyNodesLength();
+        }
+
+        function getForm() {
+            // var form = document.forms[0];
+            // var form = document.forms['form-1'];
+            var form = document.forms.frm;
+            var elem = form.elements;
+            var str = `Total Elements in form: ${elem.length}<br>`;
+            var formBody = document.createElement("div");
+            formBody.innerHTML = str;
+            document.body.appendChild(formBody);
+        }
+
+        function getTitle() {
+            var title = document.title;
+            var elem = document.createElement("p");
+            elem.innerHTML = "Title: " + title;
+            document.body.appendChild(elem);
+        }
+
+        function getScripts() {
+            var scripts = document.scripts;
+            var str = `Total Scripts: ${scripts.length}<br>`;
+            var elem = document.createElement("div");
+            elem.innerHTML = str;
+            document.body.appendChild(elem);
+        }
+
+        function getCookies() {
+            var cookies = document.cookie;
+            var elem = document.createElement("div");
+            elem.innerHTML = `Cookies: ${cookies}<br>`;
+            document.body.appendChild(elem);
+        }
+
+        function getDomain() {
+            var domain = document.domain;
+            var elem = document.createElement("div");
+            elem.innerHTML = `Domain: ${domain}<br>`;
+            document.body.appendChild(elem);
+        }
+
+        function getLinks() {
+            var links = document.links;
+            var str = `Total Links: ${links.length}<br>`;
+            var elem = document.createElement("div");
+            elem.innerHTML = str;
+            document.body.appendChild(elem);
+        }
+
+        function getImages() {
+            var images = document.images;
+            var str = `Total Images: ${images.length}<br>`;
+            var elem = document.createElement("div");
+            elem.innerHTML = str;
+            document.body.appendChild(elem);
+        }
+
+        function getBodyNodesLength() {
+            var body = document.body;
+            var nodes = body.children;
+            var str = `Total Nodes: ${nodes.length}<br>`;
+            var elem = document.createElement("div");
+            elem.innerHTML = str;
+            document.body.appendChild(elem);
+        }
+    </script>
+</head>
+
+<body>
+    <a href="https://google.com/">Google</a>
+    <a href="https://bing.com/">Bing</a>
+
+    <!-- Images -->
+    <img src="images/rajani.jpg" alt="Rajni">
+    <img src="images/bat1_tn.jpg" alt="Batman">
+    <img src="images/blackpanther.jpg" alt="blackpanther">
+
+    <form name="frm">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="surname" placeholder="Surname">
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr/>
+</body>
+
+</html>
