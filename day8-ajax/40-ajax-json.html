@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX With XML</title>
+
+    <style>
+        button {
+            width: 100px;
+            height: 25px;
+            background-color: rgb(106, 226, 206);
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+    </style>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = () => {
+            console.log("ReadyState Value: ", xhr.readyState);
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                var heroData = JSON.parse(xhr.responseText).hl;
+
+                for (var i = 0; i < heroData.length; i++) {
+                    document.getElementById('hl').innerHTML += "<li>" + heroData[i].title + "</li>";
+                }
+            } else {
+                console.log(xhr.readyState);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementsByTagName("button")[0].addEventListener("click", function () {
+                xhr.open("get", "data.json", false);
+                xhr.send();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Fetch Data</button>
+    <!-- <div id="log"></div> -->
+    <ol id="hl"></ol>
+</body>
+
+</html>

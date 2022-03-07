@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX With XML</title>
+
+    <style>
+        div {
+            width: 1000px;
+            height: 600px;
+            background-color: rgb(74, 28, 80);
+            margin: auto;
+            overflow: auto;
+        }
+
+        button {
+            width: 100px;
+            height: 25px;
+            background-color: rgb(106, 226, 206);
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            width: 300px;
+            background-color: rgb(12, 11, 14);
+            float: left;
+            margin: 10px;
+            height: 500px;
+        }
+
+        .box img {
+            width: 300px;
+        }
+
+        .box h1 {
+            margin: 5px;
+            padding: 5px;
+            background-color: rgb(214, 104, 205);
+            text-align: center;
+            font-family: 'Trebuchet MS';
+            font-size: 18px;
+            color: white;
+            border: 1px solid rgb(223, 79, 241);
+            border-radius: 50%;
+        }
+
+        .box h2,
+        h3 {
+            margin: 5px;
+            font-size: 18px;
+            color: cornsilk;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = () => {
+            console.log("ReadyState Value: ", xhr.readyState);
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                // console.log(xhr.responseText);
+                var hero = xhr.responseXML.getElementsByTagName('hl');
+                for (var i = 0; i < hero.length; i++) {
+                    document.getElementById('log').innerHTML += "<div class='box'>" + "<h1>" + hero[i]
+                        .querySelector(
+                            'title').innerHTML + "</h1>" + "<h2>" + hero[i].querySelector('firstname').innerHTML +
+                        " " + hero[i].querySelector('lastname').innerHTML + "</h2>" + "<img src='" + hero[i]
+                        .querySelector('poster').innerHTML + "' alt='" + hero[i].querySelector('title').innerHTML +
+                        "'>" + "<h3>" + "City: " + hero[i].querySelector('city').innerHTML + "</h3>" + "<h3>" +
+                        "Ticket Price" + hero[i].querySelector('ticketprice').innerHTML + "</h3>" + "<h3>" +
+                        "Release Date: " + hero[i].querySelector('releasedate').innerHTML + "</h3>" + "</div>";
+                }
+            } else {
+                console.log(xhr.readyState);
+                // document.getElementById('hl').innerText +=
+                //     `XHR Status ${xhr.status} | XHR Status Text: ${xhr.statusText}`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementsByTagName("button")[0].addEventListener("click", function () {
+                xhr.open("get", "data.xml", false);
+                xhr.send();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Fetch Data</button>
+    <div id="log"></div>
+
+</body>
+
+</html>

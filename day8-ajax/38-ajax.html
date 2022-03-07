@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Fundamentals</title>
+
+    <style>
+        button {
+            width: 100px;
+            height: 25px;
+            background-color: rgb(106, 226, 206);
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        div {
+            width: 600px;
+            height: 600px;
+            background-color: rgb(106, 226, 206);
+            margin: auto;
+            overflow: auto;
+        }
+    </style>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = () => {
+            console.log("ReadyState Value: ", xhr.readyState);
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                // console.log(xhr.responseText);
+                document.getElementById('log').innerText = xhr.responseText;
+            } else {
+                // console.log(xhr.readyState);
+                document.getElementById('log').innerText =
+                    "XHR Status " + xhr.status + " | " + "XHR Status Text: " + xhr.responseText;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            xhr.open("get", "data.txt", false);
+            document.getElementsByTagName("button")[0].addEventListener("click", function () {
+                xhr.send();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Fetch Data</button>
+    <div id="log"></div>
+</body>
+
+</html>
