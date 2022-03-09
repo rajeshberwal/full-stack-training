@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Promises</title>
+
+    <script>
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (true) {
+                    resolve('Success : Resolve Message');
+                } else {
+                    reject('Error: Reject Message');
+                }
+            }, 4000);
+        });
+
+        promise
+            .then(res => {
+                console.log(`Then: ${res}`);
+                return res.toUpperCase();
+            })
+            .then(res => {
+                console.log(`Then: ${res}`);
+                return res.toLowerCase();
+            })
+            .then(res => {
+                console.log(`Then: ${res}`);
+                return res.length;
+            })
+            .then(res => {
+                console.log(`Then: ${res}`)
+            })
+            .catch(rej => console.log(`Catch: ${rej}`))
+            .finally(() => console.log('Promise is complete'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
