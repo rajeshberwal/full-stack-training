@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Events in jQuery</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 10px auto;
+        }
+        button{
+            width: 200px;
+            display: block;
+            margin: 5px auto;
+        }
+    </style>
+    <script src="lib/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            $("#showBtn").on("click", showHandler);
+            $("#hideBtn").on("click", hideHandler);
+            $("#toggleBtn").on("click", toggleHandler);
+            $("#fadeiBtn").on("click", fadeiHandler);
+            $("#fadeoBtn").on("click", fadeoHandler);
+            $("#fade2Btn").on("click", fade2Handler);
+            $("#fadeback2Btn").on("click", fadeback2Handler);
+            $("#slideUpBtn").on("click", slideUpHandler);
+            $("#slideDownBtn").on("click", slideDownHandler);
+            $("#slideToggleBtn").on("click", slideToggleHandler);
+        });
+        function showHandler(){
+            $(".box").show(2000)
+        };
+        function hideHandler(){
+            $(".box").hide(4000)
+        };
+        function toggleHandler(){
+            $(".box").toggle(1000)
+        };
+        function fadeiHandler(){
+            $(".box").fadeIn(1000)
+        };
+        function fadeoHandler(){
+            $(".box").fadeOut(1000)
+        };
+        function fade2Handler(){
+            $(".box").fadeTo(1000,0.2)
+        };
+        function fadeback2Handler(){
+            $(".box").fadeTo(1000,1)
+        };
+        function slideUpHandler(){
+            $(".box").slideUp(1000)
+        };
+        function slideDownHandler(){
+            $(".box").slideDown(1000)
+        };
+        function slideToggleHandler(){
+            $(".box").slideToggle(1000)
+        };
+    </script>
+</head>
+<body>
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+    <button id="toggleBtn">Toggle</button>
+    
+    <button id="fadeiBtn">FadeIn</button>
+    <button id="fadeoBtn">FadeOut</button>
+    <button id="fade2Btn">Fade To</button>
+    <button id="fadeback2Btn">Fade Back To</button>
+    
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+    <hr/>
+    <div class="box"></div>
+</body>
+</html>
+

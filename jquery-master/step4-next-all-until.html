@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			///=========================
+			// $(".x:first").next().next().next().prev().css("border","4px double maroon")
+			// $(".x:first").nextAll().css("border","4px double maroon")
+			// $(".x:first").nextUntil(".z").css("border","4px double maroon")
+			
+			// $(".z").prevUntil(".x").css("border","4px double maroon")
+			
+			
+			 $(".x:eq(1)")
+			 .next()
+			 .text("look mom i have changed")
+			 .css("border","4px double maroon")
+			 .prev()
+			 .prev()
+			 .css("border","2px solid red")
+			 .end()
+			 .text("look dad i have changed");
+			 
+			///=========================
+		})
+	</script>
+</head>
+<body>
+<ul>
+	<li>List Item 1</li>
+	<li class="x">List Item 2 x </li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li class="x">List Item 3 x </li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li class="z">List Item 2 z </li>
+	<li>List Item 3</li>
+	<li class="x">List Item 4 x</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li class="x">List Item 5 x</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.box{
+			width: 800px;
+			height: 200px;
+			border : 1px solid gray;
+			margin: auto;
+			overflow: auto;
+		}
+		.box2{
+			width: 800px;
+			height: 200px;
+			background-color: #333333;
+			border : 1px solid gray;
+			margin: auto;
+			overflow: auto;
+		}
+		
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			// $(".box2").append($(".photo").clone());
+			/*
+			$(".photo").on("click", function(evt){
+				// $(".box").append($(evt.target).clone());
+				// $(".box").append($(evt.target).clone(true));
+			})
+			 */
+			
+			$(".box").on("click",".photo", function(evt){
+				$(".box").append($(evt.target).clone());
+			})
+		});		
+		
+	</script>
+</head>
+<body>
+	<!--button>click me</button>
+	<button>stop clicking me</button-->
+	<div class="box">
+		<img class="photo" src="images/rajani.jpg" width="100" />
+	</div>
+	<!--div class="box2"></div-->
+</body>
+</html>

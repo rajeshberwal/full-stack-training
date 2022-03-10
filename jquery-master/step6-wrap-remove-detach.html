@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		p{
+			border: 5px solid green;
+		}
+		[id^="box"]{
+			width : 200px;
+			height : 80px;
+			background-color: yellow;
+			margin: 10px;
+			border: 1px solid transparent;
+		}
+		p [id^="box"]{
+			width : 200px;
+			height : 80px;
+			background-color: #333333;
+			margin: 10px;
+			border: 1px solid transparent;
+		}
+		[id^="box"] div, div{
+			height : 20px;
+			background-color: orangered;
+			margin: 10px;
+		}
+		ul{
+			border: 5px solid cyan;
+			padding: 5px;
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		
+		$(function(){
+			var elm = null;
+			$("ul").on("click", function(){
+				alert("you clicked me");
+			})
+			$("button").on("click", function(){
+				$("body").append(elm)
+			})
+			///=========================
+				// $("[id^= 'box']").wrap("<p/>")
+				// $("[id^= 'box']").wrapAll("<p/>")
+
+				// $("[id^= 'box']").wrapInner("<p/>")
+				// $("ul").empty()
+			//	elm = $("ul").detach();
+			//	elm = $("ul").remove();
+			///=========================
+		})
+	</script>
+</head>
+<body>
+	<button>Get it back</button>
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+		<li>List Item 4</li>
+		<li>List Item 5</li>
+	</ul>
+<div id="box1">content 1</div>
+<div id="box2">content 2</div>
+<div id="box3">content 3</div>
+<div id="box4">content 4</div>
+<div id="box5">content 5</div>
+</body>
+</html>

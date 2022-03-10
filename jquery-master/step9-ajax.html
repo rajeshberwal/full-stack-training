@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Ajax in jQuery</title>
+	<style>
+		.box{
+			width: 450px;
+			height: 200px;
+			background-color: #333333;
+			color: white;
+			font-family: arial;
+			text-align: justify;
+			padding: 10px;
+			margin: auto;
+			overflow: auto;
+		}
+		button{
+			width: 470px;
+			display: block;
+			margin: 10px auto;
+			padding: 10px
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			$("#btn").on("click", clickHandler)
+		});
+		function clickHandler(){
+			// $(".box").load("data/data.xml")
+			/*
+			$.get("data/data.txt")
+			.done(function(response, status, jqxhr){
+				$(".box").text(response);	
+			})
+			.fail(function(jqxhr, status, statusText){
+				console.log(jqxhr,status, statusText);
+				$(".box").text(" requested file was "+statusText+" please try after some time");	
+			})
+			 */
+			
+			$.get("data/data.txt",function(res,status,jqxhr){
+				$(".box").text(res);
+			})
+			
+			
+		};
+	</script>
+</head>
+<body>
+	<button id="btn">Get Data</button>
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Ajax in jQuery</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 100px;
+			background-color: #333333;
+			color: white;
+			font-family: arial;
+			text-align: justify;
+			padding: 10px;
+			margin: auto;
+			overflow: auto;
+		}
+		
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			$(".box")
+			.animate({
+				width : "500px"
+			}, 2000)
+			.animate({
+				height : "500px"
+			}, 2000)
+			.delay(5000)
+			.animate({
+				width : "300px"
+			}, 2000)
+			.animate({
+				height : "100px"
+			}, 2000)
+			.promise()
+			.done(function(){
+				alert("animation is now complete")
+			})
+			
+			$(":animated").css("border","10px dotted orange");
+			
+			$("button").click(function(){
+				$(".box").stop(true,true);
+			})
+		});
+	</script>
+</head>
+<body>
+	<button>Stop</button>
+	<div class="box"></div>
+</body>
+</html>

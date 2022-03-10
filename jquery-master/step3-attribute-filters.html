@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			///=========================
+				// $("img[alt]").css("border","10px dotted red")
+				// $("img[alt=supergirl]").css("border","10px dotted red")
+				// $("img[width=99]").css("border","10px dotted red")
+				// $("img[src='images/batman.jpg']").css("border","10px dotted red")
+				// $("img[alt ^= 'super']").css("border","10px dotted red")
+				// $("img[alt != 'superman']").css("border","10px dotted red")
+				// $("img[alt ^= 'super']").css("border","10px dotted red")
+				// $("img[alt *= 'r']").css("border","10px dotted red")
+				// $("img[alt *= 'r'][width='99']").css("border","10px dotted red")
+				// $("li:first-child").css("border","10px dotted red")
+				
+				// $("li:first-child").css("border","10px dotted red")
+				// $("li:last-child").css("border","10px dotted red")
+				// $("li:only-child").css("border","10px dotted red")
+				// $("li:nth-child(2)").css("border","10px dotted red")
+				// $("li:nth-child(odd)").css("border","10px dotted red")
+				// $("li:nth-child(even)").css("border","10px dotted red")
+				// $("li:not(:nth-child(5n))").css("background-color","red")
+				/*
+				$("li").each(function(){
+					// console.log(this)// DOM element and not a jquery element
+					// this.css("border", "2px solid red")
+					// this.style.border = "2px solid red";
+					$(this).css("border", "2px solid red");
+				});
+				 */
+				// alert( $("li").filter(".x").length );
+				
+				// $("ul").find(".x").css("border","2px solid red")
+			///=========================
+		})
+	</script>
+</head>
+<body>
+<ul>
+	<li>List Item 1</li>
+	<li class="x">List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li class="x">List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li class="x">List Item 4</li>
+	<li>List Item 5</li>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li class="x">List Item 5</li>
+</ul>
+<img src="images/batman.jpg" 	alt="batman" 	width="100" />
+<img src="images/supergirl.jpg" alt="supergirl" width="99" />
+<img src="images/superman.jpg" 	alt="superman" 	width="100" />
+<img src="images/ironman.jpg" 	alt="ironman" 	width="100" />
+<img src="images/robin.jpg" 	  				width="100" />
+<img src="images/phantom.jpg" 	alt="phantom" 	width="100" />
+<img src="images/spiderman.jpg" alt="spiderman" width="100" />
+<img src="images/supergirl.jpg" alt="supergirl" width="100" />
+</body>
+</html>

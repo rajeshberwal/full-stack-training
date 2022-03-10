@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border : 1px solid gray;
+			margin: auto;
+		}
+		.redbox{
+			background-color: red;
+		}
+		.greenbox{
+			background-color: green;
+		}
+		.yellowbox{
+			background-color: yellow;
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			/*
+			$("button:first").bind("click", clickHandler);
+			$("button:last").bind("click", function(){
+				$("button:first").unbind("click",clickHandler);
+				alert("you can not click the first button anymore");
+			});
+			$("button:first").on("click", clickHandler);
+			$("button:last").on("click", function(){
+				$("button:first").off("click",clickHandler);
+				alert("you can not click the first button anymore");
+			});
+			 */
+			// $("button:first").one("click", clickHandler);
+
+			/*
+			$(".box").on("mouseover", function(){
+				console.log("you did mouseover")
+			})
+			$(".box").on("mouseout", function(){
+				console.log("you did mouseout")
+			})
+			 */
+			/*
+			 * 
+			$(".box").hover(
+				function(){
+					// console.log("you did mouseover")
+					$(".box").toggleClass("redbox");
+				},function(){
+					//console.log("you did mouseout")
+					$(".box").toggleClass("greenbox");
+				})
+			 */
+			
+			/*
+			$(".box").on("mouseover", function(){
+				console.log("you mouseover me")
+			});
+			$(".box").on("mousedown", function(){
+				console.log("you mousedown me")
+			});
+			$(".box").on("mouseup", function(){
+				console.log("you mouseup me")
+			});
+			$(".box").on("click", function(){
+				console.log("you clicked me")
+			});
+			$(".box").on("mouseout", function(){
+				console.log("you mouseout me")
+			});
+			 */
+			
+			$(".box").on({
+				"mouseover" : evtHandler,
+				"mousedown" : evtHandler,
+				"mouseup" : evtHandler,
+				"click" : evtHandler,
+				"mouseout" :evtHandler
+				});
+			});
+			function evtHandler(evt){
+				console.log(evt.type+" happened");
+			}
+		/*
+		 * 
+		function clickHandler(){
+			alert("you clicked me");
+		}
+		 */
+	</script>
+</head>
+<body>
+	<!--button>click me</button>
+	<button>stop clicking me</button-->
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Events in jQuery</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color: orange;
+			margin: 10px auto;
+		}
+		button{
+			width: 200px;
+			display: block;
+			margin: 5px auto;
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			$("#animBtn").on("click", animHandler);
+		});
+		function animHandler(){
+			$(".box").animate({
+				width : "600px",
+				height : "600px",
+				fontSize : "32px"
+			},2000, function(){
+				alert("done...")
+			});
+		};
+	</script>
+</head>
+<body>
+	<button id="animBtn">Animate width</button>
+	<hr/>
+	<div class="box">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</body>
+</html>

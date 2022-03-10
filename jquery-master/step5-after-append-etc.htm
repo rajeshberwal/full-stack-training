@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		[id^="box"]{
+			width : 300px;
+			height : 100px;
+			background-color: yellow;
+			margin: 10px;
+			border: 1px solid transparent;
+		}
+		[id^="box"] div, div{
+			height : 20px;
+			background-color: orangered;
+			margin: 10px;
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			///=========================
+				// $("#box1").append("text message");
+				// $("#box1").prepend("<div/>");
+				// $("#box1").append("<div/>");
+				
+				// $("#box2").before("<div/>");
+				// $("#box2").after("<div/>");
+				
+				// $("#box1").appendTo("#box5");
+				// $("#box1").prependTo("#box5");
+				
+				// $("#box1").insertAfter("#box5")
+				// $("#box1").insertBefore("#box5")
+			///=========================
+		})
+	</script>
+</head>
+<body>
+<div id="box1">content 1</div>
+<div id="box2">content 2</div>
+<div id="box3">content 3</div>
+<div id="box4">content 4</div>
+<div id="box5">content 5</div>
+</body>
+</html>

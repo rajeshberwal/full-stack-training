@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			///=========================
+				// $("li:odd").css("border","2px solid red");
+				// $("li:not(:odd)").css("border","2px solid red");
+				// $("li:not(.x,.a)").css("border","2px solid red");
+				// $("li:eq(4)").css("border","2px solid red");
+				
+				// $("h1,h2,h3,h4,h5,h6").css("border","2px solid red")
+				// $(":header").css("border","2px solid red");
+				// $("li:contains(3), :header:contains(3)").css("border","2px solid pink");
+				
+				// $("li:contains(3), :header:contains(3)").css("border","2px solid pink");
+				// $("p:empty").css("border","2px solid blue");
+				// $("p:parent").css("border","2px solid pink");
+				
+				 $("ul:has(.y)").css("border","2px solid pink");
+			///=========================
+		})
+	</script>
+</head>
+<body>
+	<!--
+		(ul>li{List Item $}*5)+(p{lorem}*3)+h${Heading $}*6
+	-->
+<ul id="list">
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li class="a y">List Item 3</li>
+	<li class="x">List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+<ul>
+	<li class="a">List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li class="x">List Item 5</li>
+</ul>
+<hr/>
+<p></p>
+<p class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione labore dicta consequuntur ipsam temporibus saepe possimus ut voluptatibus consectetur culpa eaque debitis qui adipisci excepturi facilis animi odit! Nam asperiores!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quaerat nesciunt facilis quae quas similique rerum optio sunt sit numquam nisi necessitatibus nulla obcaecati dolorum possimus animi maxime exercitationem non.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis quod explicabo vel eius iste aliquid libero harum sit quo sunt eaque itaque corrupti omnis molestias tenetur porro labore soluta.</p>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+</body>
+</html>
