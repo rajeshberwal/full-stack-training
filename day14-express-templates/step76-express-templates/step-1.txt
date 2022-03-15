@@ -1,0 +1,21 @@
+const express = require('express');
+const app = express();
+
+// express configuration set
+// express middleware use
+
+// middleware
+app.use(express.static(__dirname));
+app.use('/assests', express.static(__dirname + '/images'));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.listen(4040, 'localhost', function (error) {
+    if (error) {
+        console.log('Error: ', error);
+    } else {
+        console.log('server is now running...');
+    }
+});

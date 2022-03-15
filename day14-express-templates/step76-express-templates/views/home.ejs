@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS Templating</title>
+</head>
+
+<body>
+    <h1>Welcome To EJS Template</h1>
+    <%= companyName %>
+    <hr>
+    <% if (registeredUser) { %>
+        <h2>Hello Registered User</h2>
+    <% } else { %>
+        <h2>Hello Guest</h2>
+    <% } %>
+    <hr>
+
+    <form method="post">
+        <label for="nHero"></label>
+        <input type="text" name="nextHero" id="nHero">
+        <button type="submit">Add Hero</button>
+    </form>
+
+    <hr />
+    <ol>
+        <% for(let i = 0; i < heros.length; i++) { %>
+            <li><%= heros[i] %></li>
+        <% } %>
+    </ol>
+</body>
+
+</html>
