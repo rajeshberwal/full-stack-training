@@ -14,7 +14,7 @@ let errorHandler = err => console.log('Error: ', err);
 
 // DB configuration
 // ---------------------------
-const URI = 'mongodb+srv://username:<password>@mycluster.oad7t.mongodb.net/onlineDB?retryWrites=true&w=majority';
+const URI = 'mongodb+srv://irajeshberwal:G4JKMrimflBdLJCw2@mycluster.oad7t.mongodb.net/onlineDB?retryWrites=true&w=majority';
 
 // ORM
 let Schema = mongoose.Schema;

@@ -1,0 +1,7 @@
+#multi-answer, #single-answer {
+    display: none;
+}
+
+#single-option:selection {
+    display: block;
+}
