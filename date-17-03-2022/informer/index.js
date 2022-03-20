@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// middlewares
+app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({
+    extended: false
+}));
+
 // application configuration
 // --------------------------------------
 let errorHandler = err => console.log('Error: ', err);
@@ -29,11 +35,6 @@ mongoose.connect(URI)
     .then(() => console.log('DB Connected'))
     .catch(err => errorHandler(err));
 
-// middlewares
-app.use(express.static(__dirname + '/public'));
-app.use(express.urlencoded({
-    extended: false
-}));
 
 // Routes
 app.get('/', (req, res) => {
