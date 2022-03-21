@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home
+    body 
+        h1 Submit Your Report Here
+
+        form(action="#", method="post") 
+            label(for="uname") Enter Your Name: 
+            input(type="text", name="uname", id="uname")
+
+            each question in questions
+                h5= question.question
+                if question.aCategory == 2
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-1", value=question.answer1_Point)
+                    label(for=question.questionCode+"ans-1")= question.answer1
+                    br  
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-2", value=question.answer2_Point)
+                    label(for=question.questionCode+"ans-2")= question.answer2
+                else
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-1", value=question.answer1_Point)
+                    label(for=question.questionCode+"ans-1")= question.answer1
+                    br  
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-2", value=question.answer2_Point)
+                    label(for=question.questionCode+"ans-2")= question.answer2
+                    br
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-3", value=question.answer3_Point)
+                    label(for=question.questionCode+"ans-3")= question.answer3
+                    br  
+                    input(type="radio", name=question.questionCode+"ans", id=question.questionCode+"ans-4", value=question.answer4_Point)
+                    label(for=question.questionCode+"ans-4")= question.answer4
+            br
+            button(type="submit") Submit
