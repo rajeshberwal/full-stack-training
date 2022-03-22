@@ -1,5 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const errorHandler = require('./helpers/errorHandler.helper');
+
+const config = require('./config.json');
+const route = require('./routes/user.routes');
 
 const app = express();
 
@@ -7,77 +11,15 @@ const app = express();
 // ---------------------------
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
+app.use(route);
 
-// application configuration
-// --------------------------------------
-let errorHandler = err => console.log('Error: ', err);
-
-// DB configuration
-// ---------------------------
-const URI = 'mongodb+srv://irajeshberwal:G4JKMrimflBdLJCw2@mycluster.oad7t.mongodb.net/onlineDB?retryWrites=true&w=majority';
-
-// ORM
-let Schema = mongoose.Schema;
-let ObjectId = Schema.ObjectId;
-let User = mongoose.model('User', new Schema({
-    id: ObjectId,
-    username: String,
-    useremail: String,
-    usercity: String
-}));
-
-mongoose.connect(URI)
+// Mongoose Configuration
+mongoose.connect(config.URI)
     .then(() => console.log('DB Connected'))
     .catch(err => errorHandler(err));
 
-// CRUD Routes
-// ---------------------------------------------------
-app.get('/data', (req, res) => {
-    console.log('GET Request for Data Recieved');
 
-    User.find((err, users) => {
-        if (err) {
-            errorHandler(err);
-        } else {
-            res.json({
-                users
-            });
-        }
-    });
-});
-
-app.delete('/delete/:id', (req, res) => {
-    User.findByIdAndDelete({
-        _id: req.params.id
-    }, (err, deletedUser) => {
-        if (err) {
-            console.log('Error: ', err);
-        } else {
-            console.log('User got deleted.');
-        }
-    });
-});
-
-// app.get('/edit/:id', (req, res) => {
-
-// })
-
-app.post('/add', (req, res) => {
-    // console.log(req.body);
-    let user = new User(req.body);
-    user
-        .save()
-        .then(dbRes => {
-            res.json({
-                "message": "User Added"
-            });
-        })
-        .catch(err => {
-            console.log('Error: ', err);
-        });
-});
-
-app.listen(5050, (err) => {
+app.listen(config.PORT, (err) => {
     if (err) {
         errorHandler(err);
     } else {
