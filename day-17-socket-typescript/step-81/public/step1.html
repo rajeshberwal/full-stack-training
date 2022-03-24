@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        function serverMessageHandler(message) {
+            document.querySelector('.container').innerHTML = `<p>Server Sent Message: ${message}</p>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            socket.addEventListener('serverMessage', serverMessageHandler);
+        });
+    </script>
+    <title>Sockets</title>
+</head>
+<body>
+    <h1>Welcome To Socket.io</h1>
+
+    <p class="container"></p>
+</body>
+</html>

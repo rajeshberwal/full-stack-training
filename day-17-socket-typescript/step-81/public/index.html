@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+        let username = 'Guest';
+        const socket = io();
+
+        function serverMessageHandler(res) {
+            if (res.username) {
+                document.querySelector('.container').innerHTML += `<p>${res.username}: ${res.message}</p>`;
+            }
+        }
+
+        function loginHandler() {
+            username = document.getElementById('username').value;
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('chatBox').style.display = 'block';
+            document.getElementById('welcome').innerText = username;
+        }
+
+        function sendHandler() {
+            socket.emit('clientMessage', {
+                "username": username,
+                "message": document.getElementById('chatMessage').value
+            });
+            document.getElementById('chatMessage').value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('chatBox').style.display = 'none';
+            socket.addEventListener('serverMessage', serverMessageHandler);
+            document.getElementById('logBtn').addEventListener('click', loginHandler);
+            document.getElementById('welcome').innerText = username;
+            document.getElementById('sendBtn').addEventListener('click', sendHandler);
+        });
+    </script>
+    <title>Sockets</title>
+</head>
+
+<body>
+    <h1>Hello <span id="welcome"></span></h1>
+    <hr>
+
+    <div id="loginBox">
+        <input type="text" id="username">
+        <button id="logBtn">Login</button>
+    </div>
+    <div id="chatBox">
+        <textarea id="chatMessage"></textarea>
+        <br>
+        <button id="sendBtn">Send</button>
+    </div>
+    <hr>
+    <div class="container"></div>
+</body>
+
+</html>

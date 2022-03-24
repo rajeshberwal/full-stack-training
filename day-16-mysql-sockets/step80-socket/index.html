@@ -13,7 +13,7 @@
             document.querySelector('.container').innerHTML += "<p>Message From Server:" + evt + "</p>";
         }
 
-        document.addEventListener('documentContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             socket.addEventListener('message', messageHandler);
         });
     </script>
