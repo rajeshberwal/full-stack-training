@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
      <h1>Forms in Angular</h1>   
      <hr> 
      <app-template-form></app-template-form>
+     <hr>
+     <app-reactive-form-group></app-reactive-form-group>
+     <hr>
+     <app-reactive-form-builder></app-reactive-form-builder>
    </div>
 
   `,
