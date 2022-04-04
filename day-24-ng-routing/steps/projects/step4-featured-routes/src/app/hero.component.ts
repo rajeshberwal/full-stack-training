@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HeroesService } from './heroes.service';
 
 @Component({
   selector: 'app-heroadd',
   template: `
-    <p>
-      hero works!
-    </p>
+    <h2>{{ selectedHero.name }}</h2>
+    <img [src]="selectedHero.image.url" [alt]="selectedHero.name">
+    <p>{{ selectedHero | json }}</p>
+    <router-outlet></router-outlet>
   `,
   styles: []
 })
 export class HeroComponent implements OnInit {
+  selectedHero:any;
 
-  constructor() { }
+  constructor(private hs: HeroesService, private ar: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.selectedHero = this.hs.getSelectedHeroes(this.ar.snapshot.queryParams['hid']);
   }
 
 }
