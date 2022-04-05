@@ -8,6 +8,9 @@ import { HeroesService } from './heroes.service';
     <h2>{{ selectedHero.name }}</h2>
     <img [src]="selectedHero.image.url" [alt]="selectedHero.name">
     <p>{{ selectedHero | json }}</p>
+    <hr>
+    <input #ryear min="0" max="100" type="range" [(ngModel)]="selectedHero.powerstats.power">
+    <a [routerLink]="['/edithero']" [queryParams]="{ hname: selectedHero.name, power: selectedHero.powerstats.power}">Set Power of {{ selectedHero.name }}</a>
     <router-outlet></router-outlet>
   `,
   styles: []

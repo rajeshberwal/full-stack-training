@@ -8,6 +8,9 @@ import { MoviesService } from './movies.service';
     <h2>{{ selectedMovie.title }}</h2>
     <img [src]="selectedMovie.posterUrl" [alt]="selectedMovie.title">
     <p>{{ selectedMovie | json }}</p>
+    <hr>
+    <input #ryear type="text" [(ngModel)]="selectedMovie.year">
+    <a [routerLink]="['/editmovie']" [queryParams]="{ mname: selectedMovie.title, year: selectedMovie.year}">Set Year of {{ selectedMovie.title }}</a>
     <router-outlet></router-outlet>
   `,
   styles: []

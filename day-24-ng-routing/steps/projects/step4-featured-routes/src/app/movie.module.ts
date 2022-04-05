@@ -6,11 +6,13 @@ import { RouterModule } from "@angular/router";
 import { MovieComponent } from "./movie.component";
 import { MoviesService } from "./movies.service";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[MovieComponent, MovieaddComponent, MovieeditComponent, MovielistComponent],
     imports:[
         CommonModule,
+        FormsModule,
         RouterModule.forChild([
         { path : "movie" , component:MovieComponent },
         { path : "movies" , component:MovielistComponent },

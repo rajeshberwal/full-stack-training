@@ -6,11 +6,13 @@ import { RouterModule } from "@angular/router";
 import { HeroComponent } from "./hero.component";
 import { HeroesService } from "./heroes.service";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[HeroaddComponent, HeroeditComponent, HerolistComponent , HeroComponent ],
     imports:[
         CommonModule,
+        FormsModule,
         RouterModule.forChild([
         { path : "hero" , component:HeroComponent },
         { path : "heroes" , component:HerolistComponent },
