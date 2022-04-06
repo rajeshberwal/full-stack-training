@@ -17,5 +17,17 @@ export class ISchoolUserService {
     }
 
     // READ TO UPDATE
+    getUserToEdit(userid:any) {
+        return this.http.get('http://localhost:5000/edit/' + userid);
+    }
+
+    // UPDATE
+    postUserToEdit(userid:any, user:User) {
+        return this.http.post('http://localhost:5000/edit/' + userid, user);
+    }
+
     // DELETE
+    deleteUser(userid:any) {
+        return this.http.delete('http://localhost:5000/delete/' + userid);
+    }
 }
