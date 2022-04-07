@@ -19,7 +19,7 @@ import { ISchoolUserService } from "./user.service";
           <label for="edit_usercity" class="form-label">Update User City</label>
           <input name="ucity" #edit_ucity="ngModel" [(ngModel)]="userToUpdate.usercity" class="form-control" id="edit_usercity">
         </div>
-        <button (click)="updateUserInfo(userToUpdate._id)" type="submit" class="btn btn-primary" [routerLink]="['/list']">Update User</button>
+        <button (click)="updateUserInfo(userToUpdate._id)" type="submit" class="btn btn-primary" [routerLink]="['']">Update User</button>
       </form>
       </div>
       

@@ -24,8 +24,7 @@ import { AddUserComponent } from './add.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent },
-      { path: 'list', component: MasterComponent },
+      { path: '', component: MasterComponent },
       { path: 'edit/:user', component: EditUserComponent },
       { path: 'add', component: AddUserComponent }
     ])

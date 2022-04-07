@@ -19,7 +19,7 @@ import { ISchoolUserService } from "./user.service";
                 <label for="usercity" class="form-label">User City</label>
                 <input name="ucity" #ucity="ngModel" [(ngModel)]="newuserdata.usercity" class="form-control" id="usercity">
             </div>
-            <button (click)="addNewUser()" type="submit" class="btn btn-primary" [routerLink]="['/list']">Add User</button>
+            <button (click)="addNewUser()" type="submit" class="btn btn-primary" [routerLink]="['']">Add User</button>
         </form>
     </div>
     `
