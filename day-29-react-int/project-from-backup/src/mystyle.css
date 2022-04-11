@@ -1,0 +1,9 @@
+.box{
+    background-color: darkslategray;
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Trebuchet MS';
+    color: azure;
+    text-align: justify;
+}

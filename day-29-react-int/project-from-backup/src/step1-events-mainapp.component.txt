@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+
+class MainApp extends Component {
+    state = {
+        power: 0
+    }
+    ipref = React.createRef();
+
+    constructor() {
+        super();
+        this.addPower = this.addPower.bind(this);
+    }
+
+    // addPower() {
+    //     this.setState({
+    //         power: this.state.power + 1
+    //     });
+    // }
+
+    // addPower = evt => {
+    //     this.setState({
+    //         power: evt.target.value
+    //     });
+    // }
+
+    addPower = val => {
+        this.setState({
+            power: this.ipref.current.value
+        });
+    }
+
+    render() {
+        return <div>
+                    <h2>Increase Power</h2>
+                    <h3>Power is: { this.state.power }</h3>
+                    {/* <button onClick={() => { this.addPower() }}>Increase Power</button> */}
+                    {/* <button onClick={ this.addPower.bind(this) }>Increase Power</button> */}
+                    {/* <button onClick={ this.addPower }>Increase Power</button> */}
+                    {/* <input onChange={ evt => this.addPower(evt) } type='number' /> */}
+                    <input ref={ this.ipref } type='range' />
+                    <button onClick={ this.addPower }>Set Power</button>
+        </div>
+    }
+}
+
+export default MainApp;
